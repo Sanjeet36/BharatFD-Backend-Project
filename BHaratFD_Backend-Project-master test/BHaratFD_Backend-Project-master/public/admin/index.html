@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Admin Panel</title>
+    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #languageSelect, #refreshBtn {
+            margin: 10px 0;
+            padding: 5px;
+            font-size: 16px;
+        }
+        #refreshBtn {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>FAQ Admin Panel</h1>
+            
+        </nav>
+    </header>
+    <main>
+        <aside>
+            <ul>
+                <li><a href="#faqForm">Add/Edit FAQ</a></li>
+                <li><a href="#faqList">Existing FAQs</a></li>
+            </ul>
+        </aside>
+        <section id="content">
+            <section id="faqForm">
+                <h2>Add/Edit FAQ</h2>
+                <form id="faqFormElement">
+                    <input type="hidden" id="faqId">
+                    <div class="form-group">
+                        <label for="question">Question:</label>
+                        <input type="text" id="question" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="answer">Answer:</label>
+                        <textarea id="answer" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="submitBtn">Add FAQ</button>
+                        <button type="button" id="cancelBtn" style="display: none;">Cancel</button>
+                    </div>
+                </form>
+            </section>
+            <section id="faqList">
+                <h2>Existing FAQs</h2>
+                <label for="languageSelect">Select Language:</label>
+                    <select id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                        <option value="bn">Bengali</option>
+                    </select>
+                <button id="refreshBtn">Refresh</button>
+                
+                <div id="faqItems"></div>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p> FAQ Admin Panel.</p>
+    </footer>
+    <div id="notification" class="notification"></div>
+    <script src="script.js"></script>
+</body>
+</html>
